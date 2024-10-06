@@ -57,18 +57,26 @@ const moon = document.getElementById("moon");
 const sun = document.getElementById("sun");
 const body = document.body;
 
-moon.addEventListener("click", () =>{
+moon.addEventListener("click", () => {
     body.classList.add("darkmode");
     moon.style.display = "none";
-    sun.style.display = "block"
+    sun.style.display = "block";
+    localStorage.setItem('dark-mode', 'enabled');
 });
 
-
-sun.addEventListener("click", () =>{
+sun.addEventListener("click", () => {
     body.classList.remove("darkmode");
+    sun.style.display = "none";
     moon.style.display = "block";
-    sun.style.display = "none"
+    localStorage.setItem('dark-mode', 'disabled');
 });
+
+// Check for saved user preference, if any, on load of the website
+if (localStorage.getItem('dark-mode') === 'enabled') {
+    body.classList.add('darkmode');
+    moon.style.display = 'none';
+    sun.style.display = 'block';
+}
 
 
 
