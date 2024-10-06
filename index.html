@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        /* Custom styles to maintain the original look and feel */
+        
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        .poppins-regular {
+        font-family: "Poppins", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        }
+
+        *{
+            font-family: Poppins;
+        }
+        body {
+            padding: 20px;
+            background-color: whitesmoke;
+            color: black;
+            text-align: right;
+        }
+        h1 {
+            margin-top: 5vh;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .checkbox{
+            border: solid 1px grey;
+
+        }
+
+        
+        .wrapper {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        #tasklist {
+            list-style-type: none;
+            padding: 0;
+        }
+        #tasklist li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #fff;
+            margin-bottom: 5px;
+            border-radius: 5px;
+        }
+        .action-container {
+            display: flex;
+            align-items: center;
+        }
+        .action-container .checkbox {
+            margin-right: 10px;
+        }
+        .completed {
+            text-decoration: line-through;
+            color: grey;
+        }
+        .delete:hover{
+                color: crimson;
+        }
+
+        .icon{
+            cursor: pointer !important;
+        }   
+
+        /* Dark Mode Styles */
+        .darkmode{
+            background-color:#252526;
+            color: #FAF9F6;
+        }
+
+        .darkmode #input{
+            color: whitesmoke;
+            background-color: #3e3e42;  
+        }
+
+        .darkmode #input::placeholder{
+            color: #FAF9F6 ;
+        }
+
+        .darkmode li{
+            border-radius: 10px;
+        }
+
+        .darkmode .delete{
+            color: whitesmoke;
+        }
+
+        .darkmode .delete:hover{
+                color: crimson;
+        }
+
+        .darkmode #tasklist li{
+            color: whitesmoke;
+            background-color: #3e3e42;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 576px) {
+            .input-group {
+                flex-direction: column;
+            }
+            #input {
+                width: 100%;
+            }
+            .buttonwrapper{
+                width: auto;
+                align-self: center;
+                margin-top: 10px;
+            }
+    
+            .delete:hover{
+                color: crimson;
+            }
+            .icon{
+                cursor: pointer !important;
+            }
+
+           
+
+    }
+    </style>     
+<body>
+    <div class="header mx-5 my-3">
+        <i class='bx bxs-moon bx-sm icon' id="moon"></i>
+        <i class='bx bx-sun bx-sm icon' id="sun" style="display: none;"></i>
+    </div>
+    <h1>To-do App</h1>
+    <div class="wrapper">
+        <div id="wrapper1">
+            <div class="input-group mb-3">
+                <input id="input" type="text" class="form-control" placeholder="Enter a task">
+                <div class="col-auto mx-3 buttonwrapper">
+                    <button id="submit" accesskey="enter" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+        <ul id="tasklist">
+            <!-- Tasks will be added here -->
+        </ul>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="to-do.js"></script>   
+</body>
+</html>
